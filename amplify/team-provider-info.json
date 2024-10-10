@@ -16,7 +16,8 @@
         "awsbookstore9665ad18": {}
       },
       "function": {
-        "awsbookstoree6ec0bd1": {}
+        "awsbookstoree6ec0bd1": {},
+        "createOrder": {}
       }
     }
   }

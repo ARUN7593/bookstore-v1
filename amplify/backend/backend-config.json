@@ -1,4 +1,39 @@
 {
+  "api": {
+    "awsbookstore": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "awsbookstore9665ad18"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2025-10-10T09:28:26.422Z",
+                "apiKeyExpirationDays": 365,
+                "description": "Guest user access to books"
+              },
+              "authenticationType": "API_KEY"
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authawsbookstore9665ad18"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
   "auth": {
     "awsbookstore9665ad18": {
       "customAuth": false,
@@ -32,6 +67,11 @@
       "service": "Lambda"
     },
     "awsbookstoree6ec0bd1": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "createOrder": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
